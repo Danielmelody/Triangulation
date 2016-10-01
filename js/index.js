@@ -1,4 +1,4 @@
-poly_point_num = 1000;
+poly_point_num;
 var canvas;
 var source = document.getElementById('source');
 var sourceTexture;
@@ -99,7 +99,7 @@ function render() {
   var camera = new CanvasToy.PerspectiveCamera();
   camera.fovy = 45;
   var gl = CanvasToy.gl;
-  sourceTexture = new CanvasToy.Texture2D(source);
+  sourceTexture = new CanvasToy.Texture2D(source, CanvasToy.gl.RGBA);
 
   var randomVerticles = [];
   randomVerticles.push([ 0, 0 ]);
@@ -135,12 +135,12 @@ function render() {
   rect.translate(0, 0, -1.0);
   scene.addObject(rect);
   scene.addObject(camera);
-  rect.registUpdate(() => { rect.translate(0, 0, 0); });
+  rect.registUpdate(function() { rect.translate(0, 0, 0); });
   CanvasToy.engine.renderMode = CanvasToy.RenderMode.Static;
   CanvasToy.engine.render(scene, camera);
 }
 
-source.onload = () => {
+source.onload = function() {
   console.log('source reload');
   document.getElementById('container').innerHTML = '';
   CanvasToy.engine = null;
