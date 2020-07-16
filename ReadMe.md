@@ -1,6 +1,6 @@
 # WebGL Triangulation
 
-Convert any image to low-poly style with **webgl**
+Convert any image to low-poly style with **webgl** on the fly
 
 the main logic is at js/index.js and shaders/
 
