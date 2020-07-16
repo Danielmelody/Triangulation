@@ -1,4 +1,4 @@
-# Triangulation
+# WebGL Triangulation
 
 Convert any image to low-poly style with **webgl**
 
